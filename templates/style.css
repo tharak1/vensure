@@ -1,0 +1,88 @@
+/* CSS styles */
+body {
+    font-family: sans-serif;
+    margin: 20px 20px;
+    padding: 20px 20px;
+    border: 3px solid black;
+  }
+  
+  h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #f0f0f0;
+    padding: 20px 0;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+  
+  .logo img {
+    width: 200px;
+    height: auto;
+  }
+  
+  .company-info {
+    text-align: right;
+  }
+  
+  main {
+    padding: 40px 0;
+  }
+  
+  .main-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+  
+  .contact-info {
+    flex: 1 1 50%;
+    padding: 10px;
+    margin: 0 10px;
+  }
+  
+  .mix-design {
+    flex: 1 1 50%;
+    padding: 10px;
+    margin: 0 10px;
+    border: 3px solid black;
+    border-radius: 5px;
+  }
+  
+  .mix-design h2 {
+    margin-bottom: 20px;
+  }
+  
+  .table-container {
+    overflow-x: auto; 
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 8px;
+    border: 1px solid black;
+  }
+  
+  th {
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #eee;
+  }

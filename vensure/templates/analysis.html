@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stress-Strain Analysis</title>
+</head>
+<body>
+
+<h1>Stress-Strain Analysis</h1>
+
+<img src="data:image/png;base64,{{ graphic }}" alt="Stress-Strain Curve" />
+
+<p>Young's Modulus (E) = {{ slope|floatformat:"2" }} MPa</p>
+<p>R-squared value = {{ r_value|floatformat:"2" }}</p>
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Traxial Test Data</title>
+    <style type="text/css">
+
+@page pg1 {
+	size: a4;
+	background-image: url('pdf/test-invoice-bg.pdf');
+    padding: 8px;
+
+	@frame content_frame {
+            left: 50pt;
+            width: 512pt;
+            top: 50pt;
+            height: 692pt;
+            -pdf-frame-border: 1;    /* for debugging the layout */
+        }
+}
+@page pg2 {
+	size: a4;
+	background-image: url('img/beach.jpg');
+    padding: 8px;
+
+	background-page-step: 2;
+	background-opacity: 0.5;
+	@frame content_frame {
+            left: 50pt;
+            width: 512pt;
+            top: 50pt;
+            height: 692pt;
+            -pdf-frame-border: 1;    /* for debugging the layout */
+        }
+}
+@page pg3 {
+	size: a4;
+	background-image: url('img/beach.jpg');
+    padding: 8px;
+	background-page-step: 2;
+	background-opacity: 0.5;
+	@frame content_frame {
+            left: 50pt;
+            width: 512pt;
+            top: 50pt;
+            height: 692pt;
+            -pdf-frame-border: 1;    /* for debugging the layout */
+        }
+}
+        /* Add your CSS styles here */
+        .table-container {
+    page-break-inside: avoid; /* Avoid page breaks inside the table container */
+}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #000000;  /* All borders */
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            padding: 5px;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .graph-image {
+            max-width: 100%;
+            height: auto;
+        }
+        ul {
+            list-style-type: none;  /* Remove list item decoration */
+            padding-left: 0;  /* Remove padding */
+        }
+        .hiu{
+          padding-bottom: 2px;
+        }
+        .topt td{
+          padding: 5px;
+        }
+        .table-container {
+  page-break-inside: avoid;
+  /* Additional CSS for table layout and styling */
+}
+    </style>
+</head>
+<body>
+    
+<h2>Traxial Test Data</h2>
+
+<table>
+    <tr class="topt">
+        <th>Field</th>
+        <th>Value</th>
+    </tr>
+    <tr class="topt">
+        <td>ID</td>
+        <td>{{ id }}</td>
+    </tr>
+    <tr class="topt">
+        <td>Diameter</td>
+        <td>{{ diameter }}</td>
+    </tr>
+    <tr class="topt">
+        <td>Length</td>
+        <td>{{ length }}</td>
+    </tr>
+    <tr class="topt">
+        <td>Area</td>
+        <td>{{ area }}</td>
+    </tr>
+    <tr class="topt">
+        <td>Radians</td>
+        <td>{{ radians }}</td>
+    </tr>
+    <tr class="topt">
+        <td>Degrees</td>
+        <td>{{ degrees }}</td>
+    </tr>
+    <tr class="topt">
+        <td>Result</td>
+        <td>{{ result }}</td>
+    </tr>
+</table>
+<pdf:nextpage name="pg1" />
+<p>{{ comments }}</p>
+<pdf:nextpage name="pg2" />
+<h3>Array Fields</h3>
+
+<div class="table-container" style="page-break-after: always;">
+<table>
+<thead>
+    <tr class="hiu">
+        <th>LVDT</th>
+        <th>Load at 100</th>
+        <th>Load at 200</th>
+        <th>Strain</th>
+        <th>Corrected Area</th>
+        <th>Deviator Stress at 100</th>
+        <th>Deviator Stress at 200</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>
+          <ul>
+            {% for value in lvdt %}
+                <li>{{ value }}</li>
+            {% endfor %}
+        </ul>
+        </td>
+        <td>
+          <ul>
+            {% for value in lvdt %}
+                <li>{{ value }}</li>
+            {% endfor %}
+        </ul>
+        </td>
+        <td>
+          <ul>
+            {% for value in lvdt %}
+                <li>{{ value }}</li>
+            {% endfor %}
+        </ul>
+        </td>
+        <td>
+          <ul>
+            {% for value in lvdt %}
+                <li>{{ value }}</li>
+            {% endfor %}
+        </ul>
+        </td>
+        <td>
+          <ul>
+            {% for value in lvdt %}
+                <li>{{ value }}</li>
+            {% endfor %}
+        </ul>
+        </td>
+        <td>
+          <ul>
+              {% for value in lvdt %}
+                  <li>{{ value }}</li>
+              {% endfor %}
+          </ul>
+        </td>
+        <td>
+          <ul>
+            {% for value in lvdt %}
+                <li>{{ value }}</li>
+            {% endfor %}
+        </ul>
+        </td>
+    </tr>
+</tbody>
+</table>
+</div>
+<!-- <pdf:nextpage name="pg3" /> -->
+<h3>Graph</h3>
+<img class="graph-image" src="{{ graph_url }}" alt="Graph">
+
+<div class="footer">
+    <!-- Add footer content here if needed -->
+</div>
+
+</body>
+</html>
